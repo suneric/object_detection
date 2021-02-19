@@ -1,0 +1,13 @@
+name: py3-tf2-gpu
+
+dependencies:
+  - python==3.7
+  - pip
+  - matplotlib
+  - opencv
+  - cudatoolkit==11.0.221
+  - pip:
+    - lxml
+    - tqdm
+    - opencv-python==4.2.0.34
+    - -e .

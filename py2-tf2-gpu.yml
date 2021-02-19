@@ -1,0 +1,19 @@
+name: py2-tf2-gpu
+
+dependencies:
+  - python==2.7.16
+  - pip
+  - matplotlib
+  - opencv
+  - cudnn
+  - cudatoolkit==10.1.243
+  - pip:
+    - tensorflow-gpu==2.1.0
+    - lxml
+    - tqdm
+    - opencv-python==4.2.0.34
+    - pandas
+    - numpy
+    - awscli
+    - urllib3
+    - -e .

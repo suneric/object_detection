@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+dataset
+OIDv4_ToolKit
+yolov3-tf2
