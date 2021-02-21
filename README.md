@@ -58,12 +58,12 @@ git clone https://github.com/zamblauskas/oidv4-toolkit-tfrecord-generator.git
 ```
 2. convert oid image dataset to tfrecord for train, validation and test
 ```
-python generate-tfrecord.py
---classes_file ../OIDv4_ToolKit/classes.txt
---class_descriptions_file ../OIDv4_ToolKit/OID/csv_folder/class-descriptions-boxable.csv
---annotations_file ../OIDv4_ToolKit/OID/csv_folder/train-annotations-bbox.csv
---images_dir ../OIDv4_ToolKit/OID/Dataset/train
---output_file ../dataset/oid/train.tfrecord
+python generate-tfrecord.py \
+--classes_file ../OIDv4_ToolKit/classes.txt \
+--class_descriptions_file ../OIDv4_ToolKit/OID/csv_folder/class-descriptions-boxable.csv \
+--annotations_file ../OIDv4_ToolKit/OID/csv_folder/train-annotations-bbox.csv \
+--images_dir ../OIDv4_ToolKit/OID/Dataset/train \
+--output_file ../dataset/oid/train.tfrecord \
 ```
 
 ## Yolov3-tensorflow2

@@ -11,7 +11,7 @@ dependencies:
     - tensorflow-gpu==2.1.0
     - lxml
     - tqdm
-    - opencv-python==4.2.0.34
+    - opencv-python==4.2.0.32
     - pandas
     - numpy
     - awscli

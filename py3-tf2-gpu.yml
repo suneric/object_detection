@@ -7,6 +7,10 @@ dependencies:
   - opencv
   - cudatoolkit==11.0.221
   - pip:
+    - pandas
+    - numpy
+    - awscli
+    - urllib3
     - lxml
     - tqdm
     - opencv-python==4.2.0.34
