@@ -84,46 +84,46 @@ python detect.py --image ./data/meme.jpg
 - with Transfer Learning
 Origanl pretrained yolov3 has 80 classes, here we learn 9 classes.
 ```
-python train.py
-	--dataset ../dataset/oid/train.tfrecord
-	--val_dataset ../dataset/oid/val.tfrecord
-	--classes ../OIDv4_ToolKit/classes.txt
-	--num_classes 9
-	--mode fit --transfer darknet
-	--batch_size 16
-	--epochs 10
-	--weights ./checkpoints/yolov3.tf
-	--weights_num_classes 80
+python train.py \
+	--dataset ../dataset/oid/train.tfrecord \
+	--val_dataset ../dataset/oid/val.tfrecord \
+	--classes ../OIDv4_ToolKit/classes.txt \
+	--num_classes 9 \
+	--mode fit --transfer darknet \
+	--batch_size 16 \
+	--epochs 10 \
+	--weights ./checkpoints/yolov3.tf \
+	--weights_num_classes 80 \
 ```
 - Training from random weights
 Training from scrath is very difficult to converge. The original paper trained darknet on imagenet before training the whole network as well.
 ```
-python train.py
-	--dataset ./dataset/oid/train.tfrecord
-	--val_dataset ./dataset/oid/val.tfrecord
-	--classes ./OIDv4_ToolKit/classes.txt
-	--num_classes 9
-	--mode fit --transfer none
-	--batch_size 16
-	--epochs 10
+python train.py \
+	--dataset ./dataset/oid/train.tfrecord \
+	--val_dataset ./dataset/oid/val.tfrecord \
+	--classes ./OIDv4_ToolKit/classes.txt \
+	--num_classes 9 \
+	--mode fit --transfer none \
+	--batch_size 16 \
+	--epochs 10 \
 ```
 
 ## Inference
 - detect from images
 ```
-python detect.py
-	--classes ../OIDv4_ToolKit/classes.txt
-	--num_classes 9
-	--weights ./checkpoints/yolov3_train_10.tf
-	--image ./data/street.jpg
+python detect.py \
+	--classes ../OIDv4_ToolKit/classes.txt \
+	--num_classes 9 \
+	--weights ./checkpoints/yolov3_train_10.tf \
+	--image ./data/street.jpg \
 ```
 - detect from validation set
 ```
-python detect.py
-	--classes ../OIDv4_ToolKit/classes.txt
-	--num_classes 9
-	--weights ./checkpoints/yolov3_train_10.tf
-	--tfrecord ./data/oidv6_val.tfrecord
+python detect.py \
+	--classes ../OIDv4_ToolKit/classes.txt \
+	--num_classes 9 \
+	--weights ./checkpoints/yolov3_train_10.tf \
+	--tfrecord ./data/oidv6_val.tfrecord \
 ```
 
 ## References
