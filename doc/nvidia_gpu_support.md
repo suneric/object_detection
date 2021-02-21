@@ -1,15 +1,26 @@
 ## nvidia gpu support
 
-## Install nvidia driver
-- check the system driver requirement
+## Install nvidia driver and cuda application
+- check the system driver requirement (assume ubuntu 18.04)
 ```
 ubuntu-drivers devices
 ```
-RTX3070 requires nvidia-driver-460 as recommended version
-- Install nvidia-driver-460 and cuda 11.0 (requires driver version >= 450)
+- Geforce RTX1070, nvidia-driver-450, cuda 11.0, cudnn 8.0.
+  Follow the instruction of [TensorFlow GPU Support](https://www.tensorflow.org/install/gpu) to install cuda and cudnn.
 
-## Install cuda 11.0
-- follow the instruction of [TensorFlow GPU Support](https://www.tensorflow.org/install/gpu) to install cuda and cudnn
+- GeForce RTX3070, nvidia-driver-460, cuda 11.2, cudnn 8.1.
+  Follow the [instruction](https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html) to install cuda and cudnn  
+  ```
+  wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin
+  sudo mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600
+  sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
+  sudo add-apt-repository "deb https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/ /"
+  sudo apt-get update
+
+  sudo apt-get install libcudnn8=8.1.0.77-1+cuda11.2
+  sudo apt-get install libcudnn8-dev=8.1.0.77-1+cuda11.2
+  ```
+
 - check gpu enabled and [use gpu](https://www.tensorflow.org/guide/gpu) once tensorflow is installed
 ```
 import tensorflow as tf
