@@ -117,6 +117,13 @@ python detect.py \
 	--weights ./checkpoints/yolov3_train_10.tf \
 	--image ./data/street.jpg \
 ```
+  - lower the threshold to recheck the result if it is not success in the first time.
+  ```
+  # in the model.py
+  flags.DEFINE_float('yolo_iou_threshold', 0.5, 'iou threshold')
+  flags.DEFINE_float('yolo_score_threshold', 0.5, 'score threshold')
+  ```
+
 - detect from validation set
 ```
 python detect.py \
